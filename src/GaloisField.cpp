@@ -32,11 +32,6 @@ GaloisField& GaloisField::operator=(const GaloisField &other) noexcept {
 }
 
 GaloisField GaloisField::operator+(const GaloisField &other) noexcept {
-    GaloisField sum;
-    for(int i = 0; i < DIMENSIONALITY; i++) {
-        sum.bits[i] = bits[i] ^ other.bits[i];
-    }
-
-    return sum;
+    return bits ^ other.bits;
 }
 
