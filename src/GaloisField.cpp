@@ -88,10 +88,10 @@ GaloisField GaloisField::operator*(const GaloisField &other) const noexcept {
     return GaloisField(mod(res));
 }
 
-GaloisField GaloisField::getZero() const noexcept {
-    return GaloisField(std::bitset<DIMENSIONALITY>());
+void GaloisField::setZero() noexcept {
+    bits = std::bitset<DIMENSIONALITY>();
 }
 
-GaloisField GaloisField::getOne() const noexcept {
-    return GaloisField(std::bitset<DIMENSIONALITY>(1));
+void GaloisField::setOne() noexcept {
+    bits = std::bitset<DIMENSIONALITY>(1);
 }

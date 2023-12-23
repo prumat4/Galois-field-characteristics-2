@@ -20,17 +20,19 @@ public:
     GaloisField operator+(const GaloisField &other) const noexcept;
     GaloisField operator*(const GaloisField &other) const noexcept;
     bool operator==(const GaloisField &other) const noexcept;
-   /**
-     * Obtain the neutral element of the Galois Field by addition.
-     * @return GaloisField object representing the additive identity (zero).
+  
+    /**
+     * Set the current Galois Field object as the additive identity (zero).
+     * @return none
      */
-    GaloisField getZero() const noexcept;
+    void setZero() noexcept;
 
     /**
-     * Obtain the neutral element of the Galois Field by multiplication.
-     * @return GaloisField object representing the multiplicative identity (one).
+     * Set the current Galois Field object as the multiplicative identity (one).
+     * @return none
      */
-    GaloisField getOne() const noexcept;
+    void setOne() noexcept;
+
 private:
     std::bitset<DIMENSIONALITY> mod(const std::bitset<2*DIMENSIONALITY - 1> other)  const noexcept;
 
