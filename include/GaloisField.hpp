@@ -4,38 +4,33 @@
 #include <bitset>
 #include <random>
 
-#ifndef DIMENSIONALITY
-#define DIMENSIONALITY 239
-#endif
-
+constexpr uint16_t M = 239;
 class GaloisField {
 public:
-    GaloisField(const std::bitset<DIMENSIONALITY> &other) noexcept;
+    GaloisField(const std::bitset<M> &other) noexcept;
     GaloisField(const std::string &hexString);
     GaloisField() noexcept = default;
-
-    void printBits() const noexcept;
     
     GaloisField& operator=(const GaloisField &other) noexcept;
     GaloisField operator+(const GaloisField &other) const noexcept;
     GaloisField operator*(const GaloisField &other) const noexcept;
-    bool operator==(const GaloisField &other) const noexcept;
-  
-    /**
-     * Set the current Galois Field object as the additive identity (zero).
-     * @return none
-     */
-    void setZero() noexcept;
+    
+    GaloisField toSquare() const noexcept;
+    GaloisField toPowerOf(const GaloisField &power) const noexcept;
+    GaloisField inverse() const noexcept;
 
-    /**
-     * Set the current Galois Field object as the multiplicative identity (one).
-     * @return none
-     */
+    bool operator==(const GaloisField &other) const noexcept;
+    uint8_t trace() const noexcept;
+
+    void setZero() noexcept;
     void setOne() noexcept;
 
-private:
-    std::bitset<DIMENSIONALITY> mod(const std::bitset<2*DIMENSIONALITY - 1> other)  const noexcept;
+    void printBits() const noexcept;
+    void generateRandomBits(size_t size) noexcept;
 
 private:
-    std::bitset<DIMENSIONALITY> bits;
+    std::bitset<M> mod(const std::bitset<2*M - 1> other)  const noexcept;
+
+private:
+    std::bitset<M> bits;
 };

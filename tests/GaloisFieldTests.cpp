@@ -50,4 +50,57 @@ BOOST_AUTO_TEST_CASE(NeutralElementTest) {
     BOOST_CHECK(product == a);
 }
 
+BOOST_AUTO_TEST_CASE(ToSquareTest) {
+    GaloisField square = a.toSquare();
+    GaloisField expected("50b6456108378713c37d3039cf1792aec1b5f9dfbebbc0a6c770a75d693e");
+
+    BOOST_CHECK(square == expected);
+}
+
+BOOST_AUTO_TEST_CASE(ToPowerOfTest) {
+    GaloisField pow = a.toPowerOf(b);
+    GaloisField expected("17c762a0c47b27abcd6d274ad5b5c738ff5ac768d320f24514b1f483ddaa");
+
+    BOOST_CHECK(pow == expected);
+}
+
+BOOST_AUTO_TEST_SUITE_END()
+
+
+BOOST_FIXTURE_TEST_SUITE(GaloisFieldUtilitiesTests, GaloisFieldFixture)
+
+BOOST_AUTO_TEST_CASE(TraceTest) {
+    auto trace = a.trace();
+    BOOST_CHECK(trace == 0);
+
+    trace = b.trace();
+    BOOST_CHECK(trace == 1);
+}
+
+BOOST_AUTO_TEST_CASE(InverseTest) {
+    GaloisField inversed = a.inverse();
+    GaloisField expected("5832c6cdadb2067298e6c340ce3eadf6810ed043badeb297a8219eebc277");
+    BOOST_CHECK(inversed == expected);
+
+    inversed = b.inverse();
+    expected = GaloisField("3d4b7cbaf4dec964719450d456eb5c6074b00df53fa4e11d19b248328389");
+    BOOST_CHECK(inversed == expected);
+}
+
+BOOST_AUTO_TEST_SUITE_END()
+
+
+BOOST_FIXTURE_TEST_SUITE(GaloisFieldComplexTests, GaloisFieldFixture)
+
+BOOST_AUTO_TEST_CASE(DistributivityTest) {
+    GaloisField c("09d7f58ff5398570a5ba840d9f0fc5c806f5353788a4c0b8488e4e62d2a");
+    BOOST_CHECK(c*(a+b) == c*a + c*b);
+}
+
+BOOST_AUTO_TEST_CASE(NeutralTest) {
+    GaloisField c("7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"), one;
+    one.setOne();
+    BOOST_CHECK(a.toPowerOf(c) == one);
+}
+
 BOOST_AUTO_TEST_SUITE_END()

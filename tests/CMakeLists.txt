@@ -12,6 +12,3 @@ target_link_libraries(GaloisFieldTests
 )
 
 target_compile_features(GaloisFieldTests PRIVATE cxx_std_17)
-
-# GoogleTests framework will be replaced by boost/tests :)
-# https://www.youtube.com/watch?v=JLTPCjRzetc&t=420s
