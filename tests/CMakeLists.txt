@@ -1,6 +1,6 @@
 find_package(Boost REQUIRED COMPONENTS unit_test_framework)
 
-include_directories(${PROJECT_SOURCE_DIR}/../include)  # Adjust the path if necessary
+include_directories(${PROJECT_SOURCE_DIR}/../include)
 
 add_executable(GaloisFieldTests
     GaloisFieldTests.cpp
