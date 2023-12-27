@@ -1,73 +1,76 @@
-// #include "GaloisFieldPoly.hpp"
+#include "GaloisFieldNormal.hpp"
 
-// #define BOOST_TEST_DYN_LINK
-// #define BOOST_TEST_MODULE GaloisFieldPolyTests
+#define BOOST_TEST_DYN_LINK
+#define BOOST_TEST_MODULE GaloisFieldNormalTests
 
-// #include <boost/test/unit_test.hpp>
-
-// struct GaloisFieldPolyFixture {
-//     GaloisFieldPoly a;
-//     GaloisFieldPoly b;
-
-//     GaloisFieldPolyFixture() : a("4fc1c8f723d908a8459557b73b1d9335db15946ae1cd3c638b407ea812c"),
-//                                b("6c6e49eca4f2b4b5684cc678e5b1449500a6ae03b4e732eaacdec175ccd") {}
-// };
-
-// BOOST_FIXTURE_TEST_SUITE(GaloisFieldPolyAdditionTests, GaloisFieldPolyFixture)
-
-// BOOST_AUTO_TEST_CASE(AdditionTest) {
-//     GaloisFieldPoly sum = a + b;
-//     GaloisFieldPoly expected("23af811b872bbc1d2dd991cfdeacd7a0dbb33a69552a0e89279ebfddde1");
-
-//     BOOST_CHECK(sum == expected);
-// }
-
-// BOOST_AUTO_TEST_CASE(NeutralElementTest) {
-//     GaloisFieldPoly zero;
-//     zero.setZero();
-//     GaloisFieldPoly sum = a + zero;
-
-//     BOOST_CHECK(sum == a);
-// }
-
-// BOOST_AUTO_TEST_SUITE_END()
+#include <boost/test/unit_test.hpp>
 
 
-// BOOST_FIXTURE_TEST_SUITE(GaloisFieldPolyMultiplicationTests, GaloisFieldPolyFixture)
+struct GaloisFieldNormalFixture {
+    GaloisFieldNormal a;
+    GaloisFieldNormal b;
 
-// BOOST_AUTO_TEST_CASE(MultiplicationTest) {
-//     GaloisFieldPoly product = a * b;
-//     GaloisFieldPoly expected("28f0923c10c934e09527bfa23cd7e2b853b3b2f3e0b3ec7aea2152073287");
+    GaloisFieldNormalFixture() : a("4fc1c8f723d908a8459557b73b1d9335db15946ae1cd3c638b407ea812c"),
+                                 b("6c6e49eca4f2b4b5684cc678e5b1449500a6ae03b4e732eaacdec175ccd") {
+                                    GaloisFieldNormal::computeMultMatrix();
+                                 }
+};
 
-//     BOOST_CHECK(product == expected);
-// }
+BOOST_FIXTURE_TEST_SUITE(GaloisFieldNormalAdditionTests, GaloisFieldNormalFixture)
 
-// BOOST_AUTO_TEST_CASE(NeutralElementTest) {
-//     GaloisFieldPoly one;
-//     one.setOne();
-//     GaloisFieldPoly product = a * one;
+BOOST_AUTO_TEST_CASE(AdditionTest) {
+    GaloisFieldNormal sum = a + b;
+    GaloisFieldNormal expected("23af811b872bbc1d2dd991cfdeacd7a0dbb33a69552a0e89279ebfddde1");
 
-//     BOOST_CHECK(product == a);
-// }
+    BOOST_CHECK(sum == expected);
+}
 
-// BOOST_AUTO_TEST_CASE(ToSquareTest) {
-//     GaloisFieldPoly square = a.toSquare();
-//     GaloisFieldPoly expected("50b6456108378713c37d3039cf1792aec1b5f9dfbebbc0a6c770a75d693e");
+BOOST_AUTO_TEST_CASE(NeutralElementTest) {
+    GaloisFieldNormal zero;
+    zero.setZero();
+    GaloisFieldNormal sum = a + zero;
 
-//     BOOST_CHECK(square == expected);
-// }
+    BOOST_CHECK(sum == a);
+}
 
-// BOOST_AUTO_TEST_CASE(ToPowerOfTest) {
-//     GaloisFieldPoly pow = a.toPowerOf(b);
-//     GaloisFieldPoly expected("17c762a0c47b27abcd6d274ad5b5c738ff5ac768d320f24514b1f483ddaa");
-
-//     BOOST_CHECK(pow == expected);
-// }
-
-// BOOST_AUTO_TEST_SUITE_END()
+BOOST_AUTO_TEST_SUITE_END()
 
 
-// BOOST_FIXTURE_TEST_SUITE(GaloisFieldPolyUtilitiesTests, GaloisFieldPolyFixture)
+BOOST_FIXTURE_TEST_SUITE(GaloisFieldNormalMultiplicationTests, GaloisFieldNormalFixture)
+
+BOOST_AUTO_TEST_CASE(MultiplicationTest) {
+    GaloisFieldNormal product = a * b;
+    GaloisFieldNormal expected("f1032ceec873b9ad89ad868839c48d2b1453ab9791233f597161cec4abc");
+
+    BOOST_CHECK(product == expected);
+}
+
+BOOST_AUTO_TEST_CASE(NeutralElementTest) {
+    GaloisFieldNormal one;
+    one.setOne();
+    GaloisFieldNormal product = a * one;
+
+    BOOST_CHECK(product == a);
+}
+
+BOOST_AUTO_TEST_CASE(ToSquareTest) {
+    GaloisFieldNormal square = a.toSquare();
+    GaloisFieldNormal expected("27e0e47b91ec845422caabdb9d8ec99aed8aca3570e69e31c5a03f54096");
+
+    BOOST_CHECK(square == expected);
+}
+
+BOOST_AUTO_TEST_CASE(ToPowerOfTest) {
+    GaloisFieldNormal pow = a.toPowerOf(b);
+    GaloisFieldNormal expected("7fe807e61c75fb7aa1e9fc4b09c1a549d500440ac7e572cfccb1b0be36a4");
+
+    BOOST_CHECK(pow == expected);
+}
+
+BOOST_AUTO_TEST_SUITE_END()
+
+
+// BOOST_FIXTURE_TEST_SUITE(GaloisFieldNormalUtilitiesTests, GaloisFieldNormalFixture)
 
 // BOOST_AUTO_TEST_CASE(TraceTest) {
 //     auto trace = a.trace();
@@ -78,27 +81,27 @@
 // }
 
 // BOOST_AUTO_TEST_CASE(InverseTest) {
-//     GaloisFieldPoly inversed = a.inverse();
-//     GaloisFieldPoly expected("5832c6cdadb2067298e6c340ce3eadf6810ed043badeb297a8219eebc277");
+//     GaloisFieldNormal inversed = a.inverse();
+//     GaloisFieldNormal expected("204BDB3F7F6AFBC1D432C39C34CB28B3967369E91DF764019B5CB3B89880");
 //     BOOST_CHECK(inversed == expected);
 
 //     inversed = b.inverse();
-//     expected = GaloisFieldPoly("3d4b7cbaf4dec964719450d456eb5c6074b00df53fa4e11d19b248328389");
+//     expected = GaloisFieldNormal("3d4b7cbaf4dec964719450d456eb5c6074b00df53fa4e11d19b248328389"); incorrect
 //     BOOST_CHECK(inversed == expected);
 // }
 
 // BOOST_AUTO_TEST_SUITE_END()
 
 
-// BOOST_FIXTURE_TEST_SUITE(GaloisFieldPolyComplexTests, GaloisFieldPolyFixture)
+// BOOST_FIXTURE_TEST_SUITE(GaloisFieldNormalComplexTests, GaloisFieldNormalFixture)
 
 // BOOST_AUTO_TEST_CASE(DistributivityTest) {
-//     GaloisFieldPoly c("09d7f58ff5398570a5ba840d9f0fc5c806f5353788a4c0b8488e4e62d2a");
+//     GaloisFieldNormal c("09d7f58ff5398570a5ba840d9f0fc5c806f5353788a4c0b8488e4e62d2a");
 //     BOOST_CHECK(c*(a+b) == c*a + c*b);
 // }
 
 // BOOST_AUTO_TEST_CASE(NeutralTest) {
-//     GaloisFieldPoly c("7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"), one;
+//     GaloisFieldNormal c("7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"), one;
 //     one.setOne();
 //     BOOST_CHECK(a.toPowerOf(c) == one);
 // }
