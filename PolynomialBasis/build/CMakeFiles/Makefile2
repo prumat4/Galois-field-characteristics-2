@@ -54,16 +54,16 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2
+CMAKE_SOURCE_DIR = /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build
+CMAKE_BINARY_DIR = /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/main.dir/all
+all: CMakeFiles/PolynomialBasis.dir/all
 all: src/all
 all: tests/all
 all: report/all
@@ -76,7 +76,7 @@ preinstall: report/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/main.dir/clean
+clean: CMakeFiles/PolynomialBasis.dir/clean
 clean: src/clean
 clean: tests/clean
 clean: report/clean
@@ -86,7 +86,7 @@ clean: report/clean
 # Directory level rules for directory report
 
 # Recursive "all" directory target.
-report/all: report/CMakeFiles/measurments.dir/all
+report/all: report/CMakeFiles/PolynomialBasisMeasurments.dir/all
 .PHONY : report/all
 
 # Recursive "preinstall" directory target.
@@ -94,14 +94,14 @@ report/preinstall:
 .PHONY : report/preinstall
 
 # Recursive "clean" directory target.
-report/clean: report/CMakeFiles/measurments.dir/clean
+report/clean: report/CMakeFiles/PolynomialBasisMeasurments.dir/clean
 .PHONY : report/clean
 
 #=============================================================================
 # Directory level rules for directory src
 
 # Recursive "all" directory target.
-src/all: src/CMakeFiles/GaloisField.dir/all
+src/all: src/CMakeFiles/GaloisFieldPoly.dir/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -109,14 +109,14 @@ src/preinstall:
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
-src/clean: src/CMakeFiles/GaloisField.dir/clean
+src/clean: src/CMakeFiles/GaloisFieldPoly.dir/clean
 .PHONY : src/clean
 
 #=============================================================================
 # Directory level rules for directory tests
 
 # Recursive "all" directory target.
-tests/all: tests/CMakeFiles/GaloisFieldTests.dir/all
+tests/all: tests/CMakeFiles/GaloisFieldPolyTests.dir/all
 .PHONY : tests/all
 
 # Recursive "preinstall" directory target.
@@ -124,112 +124,112 @@ tests/preinstall:
 .PHONY : tests/preinstall
 
 # Recursive "clean" directory target.
-tests/clean: tests/CMakeFiles/GaloisFieldTests.dir/clean
+tests/clean: tests/CMakeFiles/GaloisFieldPolyTests.dir/clean
 .PHONY : tests/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/main.dir
+# Target rules for target CMakeFiles/PolynomialBasis.dir
 
 # All Build rule for target.
-CMakeFiles/main.dir/all: src/CMakeFiles/GaloisField.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles --progress-num=5,6 "Built target main"
-.PHONY : CMakeFiles/main.dir/all
+CMakeFiles/PolynomialBasis.dir/all: src/CMakeFiles/GaloisFieldPoly.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PolynomialBasis.dir/build.make CMakeFiles/PolynomialBasis.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PolynomialBasis.dir/build.make CMakeFiles/PolynomialBasis.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles --progress-num=5,6 "Built target PolynomialBasis"
+.PHONY : CMakeFiles/PolynomialBasis.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles 0
-.PHONY : CMakeFiles/main.dir/rule
+CMakeFiles/PolynomialBasis.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/PolynomialBasis.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles 0
+.PHONY : CMakeFiles/PolynomialBasis.dir/rule
 
 # Convenience name for target.
-main: CMakeFiles/main.dir/rule
-.PHONY : main
+PolynomialBasis: CMakeFiles/PolynomialBasis.dir/rule
+.PHONY : PolynomialBasis
 
 # clean rule for target.
-CMakeFiles/main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
-.PHONY : CMakeFiles/main.dir/clean
+CMakeFiles/PolynomialBasis.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PolynomialBasis.dir/build.make CMakeFiles/PolynomialBasis.dir/clean
+.PHONY : CMakeFiles/PolynomialBasis.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/GaloisField.dir
+# Target rules for target src/CMakeFiles/GaloisFieldPoly.dir
 
 # All Build rule for target.
-src/CMakeFiles/GaloisField.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/GaloisField.dir/build.make src/CMakeFiles/GaloisField.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/GaloisField.dir/build.make src/CMakeFiles/GaloisField.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles --progress-num=1,2 "Built target GaloisField"
-.PHONY : src/CMakeFiles/GaloisField.dir/all
+src/CMakeFiles/GaloisFieldPoly.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/GaloisFieldPoly.dir/build.make src/CMakeFiles/GaloisFieldPoly.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/GaloisFieldPoly.dir/build.make src/CMakeFiles/GaloisFieldPoly.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles --progress-num=1,2 "Built target GaloisFieldPoly"
+.PHONY : src/CMakeFiles/GaloisFieldPoly.dir/all
 
 # Build rule for subdir invocation for target.
-src/CMakeFiles/GaloisField.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/GaloisField.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/GaloisField.dir/rule
+src/CMakeFiles/GaloisFieldPoly.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/GaloisFieldPoly.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/GaloisFieldPoly.dir/rule
 
 # Convenience name for target.
-GaloisField: src/CMakeFiles/GaloisField.dir/rule
-.PHONY : GaloisField
+GaloisFieldPoly: src/CMakeFiles/GaloisFieldPoly.dir/rule
+.PHONY : GaloisFieldPoly
 
 # clean rule for target.
-src/CMakeFiles/GaloisField.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/GaloisField.dir/build.make src/CMakeFiles/GaloisField.dir/clean
-.PHONY : src/CMakeFiles/GaloisField.dir/clean
+src/CMakeFiles/GaloisFieldPoly.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/GaloisFieldPoly.dir/build.make src/CMakeFiles/GaloisFieldPoly.dir/clean
+.PHONY : src/CMakeFiles/GaloisFieldPoly.dir/clean
 
 #=============================================================================
-# Target rules for target tests/CMakeFiles/GaloisFieldTests.dir
+# Target rules for target tests/CMakeFiles/GaloisFieldPolyTests.dir
 
 # All Build rule for target.
-tests/CMakeFiles/GaloisFieldTests.dir/all: src/CMakeFiles/GaloisField.dir/all
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldTests.dir/build.make tests/CMakeFiles/GaloisFieldTests.dir/depend
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldTests.dir/build.make tests/CMakeFiles/GaloisFieldTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles --progress-num=3,4 "Built target GaloisFieldTests"
-.PHONY : tests/CMakeFiles/GaloisFieldTests.dir/all
+tests/CMakeFiles/GaloisFieldPolyTests.dir/all: src/CMakeFiles/GaloisFieldPoly.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldPolyTests.dir/build.make tests/CMakeFiles/GaloisFieldPolyTests.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldPolyTests.dir/build.make tests/CMakeFiles/GaloisFieldPolyTests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles --progress-num=3,4 "Built target GaloisFieldPolyTests"
+.PHONY : tests/CMakeFiles/GaloisFieldPolyTests.dir/all
 
 # Build rule for subdir invocation for target.
-tests/CMakeFiles/GaloisFieldTests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/GaloisFieldTests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/GaloisFieldTests.dir/rule
+tests/CMakeFiles/GaloisFieldPolyTests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/GaloisFieldPolyTests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles 0
+.PHONY : tests/CMakeFiles/GaloisFieldPolyTests.dir/rule
 
 # Convenience name for target.
-GaloisFieldTests: tests/CMakeFiles/GaloisFieldTests.dir/rule
-.PHONY : GaloisFieldTests
+GaloisFieldPolyTests: tests/CMakeFiles/GaloisFieldPolyTests.dir/rule
+.PHONY : GaloisFieldPolyTests
 
 # clean rule for target.
-tests/CMakeFiles/GaloisFieldTests.dir/clean:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldTests.dir/build.make tests/CMakeFiles/GaloisFieldTests.dir/clean
-.PHONY : tests/CMakeFiles/GaloisFieldTests.dir/clean
+tests/CMakeFiles/GaloisFieldPolyTests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldPolyTests.dir/build.make tests/CMakeFiles/GaloisFieldPolyTests.dir/clean
+.PHONY : tests/CMakeFiles/GaloisFieldPolyTests.dir/clean
 
 #=============================================================================
-# Target rules for target report/CMakeFiles/measurments.dir
+# Target rules for target report/CMakeFiles/PolynomialBasisMeasurments.dir
 
 # All Build rule for target.
-report/CMakeFiles/measurments.dir/all: src/CMakeFiles/GaloisField.dir/all
-	$(MAKE) $(MAKESILENT) -f report/CMakeFiles/measurments.dir/build.make report/CMakeFiles/measurments.dir/depend
-	$(MAKE) $(MAKESILENT) -f report/CMakeFiles/measurments.dir/build.make report/CMakeFiles/measurments.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles --progress-num=7,8 "Built target measurments"
-.PHONY : report/CMakeFiles/measurments.dir/all
+report/CMakeFiles/PolynomialBasisMeasurments.dir/all: src/CMakeFiles/GaloisFieldPoly.dir/all
+	$(MAKE) $(MAKESILENT) -f report/CMakeFiles/PolynomialBasisMeasurments.dir/build.make report/CMakeFiles/PolynomialBasisMeasurments.dir/depend
+	$(MAKE) $(MAKESILENT) -f report/CMakeFiles/PolynomialBasisMeasurments.dir/build.make report/CMakeFiles/PolynomialBasisMeasurments.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles --progress-num=7,8 "Built target PolynomialBasisMeasurments"
+.PHONY : report/CMakeFiles/PolynomialBasisMeasurments.dir/all
 
 # Build rule for subdir invocation for target.
-report/CMakeFiles/measurments.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 report/CMakeFiles/measurments.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles 0
-.PHONY : report/CMakeFiles/measurments.dir/rule
+report/CMakeFiles/PolynomialBasisMeasurments.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 report/CMakeFiles/PolynomialBasisMeasurments.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles 0
+.PHONY : report/CMakeFiles/PolynomialBasisMeasurments.dir/rule
 
 # Convenience name for target.
-measurments: report/CMakeFiles/measurments.dir/rule
-.PHONY : measurments
+PolynomialBasisMeasurments: report/CMakeFiles/PolynomialBasisMeasurments.dir/rule
+.PHONY : PolynomialBasisMeasurments
 
 # clean rule for target.
-report/CMakeFiles/measurments.dir/clean:
-	$(MAKE) $(MAKESILENT) -f report/CMakeFiles/measurments.dir/build.make report/CMakeFiles/measurments.dir/clean
-.PHONY : report/CMakeFiles/measurments.dir/clean
+report/CMakeFiles/PolynomialBasisMeasurments.dir/clean:
+	$(MAKE) $(MAKESILENT) -f report/CMakeFiles/PolynomialBasisMeasurments.dir/build.make report/CMakeFiles/PolynomialBasisMeasurments.dir/clean
+.PHONY : report/CMakeFiles/PolynomialBasisMeasurments.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

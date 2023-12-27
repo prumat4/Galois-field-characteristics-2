@@ -1,7 +1,7 @@
-add_executable(measurments
+add_executable(PolynomialBasisMeasurments
     measurments.cpp
 )
 
-target_link_libraries(measurments
-    GaloisField
+target_link_libraries(PolynomialBasisMeasurments
+    GaloisFieldPoly
 )

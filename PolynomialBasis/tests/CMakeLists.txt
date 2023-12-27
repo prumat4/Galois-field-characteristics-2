@@ -2,13 +2,13 @@ find_package(Boost REQUIRED COMPONENTS unit_test_framework)
 
 include_directories(${PROJECT_SOURCE_DIR}/../include)
 
-add_executable(GaloisFieldTests
-    GaloisFieldTests.cpp
+add_executable(GaloisFieldPolyTests
+    GaloisFieldPolyTests.cpp
 )
 
-target_link_libraries(GaloisFieldTests
+target_link_libraries(GaloisFieldPolyTests
     PRIVATE Boost::unit_test_framework
-    GaloisField
+    GaloisFieldPoly
 )
 
-target_compile_features(GaloisFieldTests PRIVATE cxx_std_17)
+target_compile_features(GaloisFieldPolyTests PRIVATE cxx_std_17)

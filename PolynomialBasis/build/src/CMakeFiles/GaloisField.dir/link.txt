@@ -1,2 +1,0 @@
-/usr/bin/ar qc libGaloisField.a CMakeFiles/GaloisField.dir/GaloisField.cpp.o
-/usr/bin/ranlib libGaloisField.a

@@ -1,4 +1,4 @@
-#include "GaloisField.hpp"
+#include "GaloisFieldPoly.hpp"
 #include <chrono>
 #include <vector>
 #include <iostream>
@@ -13,27 +13,27 @@ int main() {
         double TotalInverseTime = 0.0;
 
         for (int i = 0; i < 100; i++) {
-            GaloisField gf1, gf2;
+            GaloisFieldPoly gf1, gf2;
             gf1.generateRandomBits(size);
             gf2.generateRandomBits(size);
 
             auto AdditionStartTime = std::chrono::high_resolution_clock::now();
-            GaloisField resultAdd = gf1 + gf2;
+            GaloisFieldPoly resultAdd = gf1 + gf2;
             auto AdditionEndTime = std::chrono::high_resolution_clock::now();
             TotalAdditionTime += std::chrono::duration_cast<std::chrono::nanoseconds>(AdditionEndTime - AdditionStartTime).count();
 
             auto MultiplicationStartTime = std::chrono::high_resolution_clock::now();
-            GaloisField resultMul = gf1 * gf2;
+            GaloisFieldPoly resultMul = gf1 * gf2;
             auto MultiplicationEndTime = std::chrono::high_resolution_clock::now();
             TotalMultiplicationTime += std::chrono::duration_cast<std::chrono::nanoseconds>(MultiplicationEndTime - MultiplicationStartTime).count();
 
             auto PowerOfStartTime = std::chrono::high_resolution_clock::now();
-            GaloisField resultPowerOf = gf1.toPowerOf(gf2);
+            GaloisFieldPoly resultPowerOf = gf1.toPowerOf(gf2);
             auto PowerOfEndTime = std::chrono::high_resolution_clock::now();
             TotalPowerOfTime += std::chrono::duration_cast<std::chrono::milliseconds>(PowerOfEndTime - PowerOfStartTime).count();
 
             auto InverseStartTime = std::chrono::high_resolution_clock::now();
-            GaloisField resultInverse = gf1.inverse();
+            GaloisFieldPoly resultInverse = gf1.inverse();
             auto InverseEndTime = std::chrono::high_resolution_clock::now();
             TotalInverseTime += std::chrono::duration_cast<std::chrono::milliseconds>(InverseEndTime - InverseStartTime).count();
         }

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2
+CMAKE_SOURCE_DIR = /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build
+CMAKE_BINARY_DIR = /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -97,9 +97,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -127,63 +127,63 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named PolynomialBasis
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
+PolynomialBasis: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 PolynomialBasis
+.PHONY : PolynomialBasis
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+PolynomialBasis/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PolynomialBasis.dir/build.make CMakeFiles/PolynomialBasis.dir/build
+.PHONY : PolynomialBasis/fast
 
 #=============================================================================
-# Target rules for targets named GaloisField
+# Target rules for targets named GaloisFieldPoly
 
 # Build rule for target.
-GaloisField: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GaloisField
-.PHONY : GaloisField
+GaloisFieldPoly: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GaloisFieldPoly
+.PHONY : GaloisFieldPoly
 
 # fast build rule for target.
-GaloisField/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/GaloisField.dir/build.make src/CMakeFiles/GaloisField.dir/build
-.PHONY : GaloisField/fast
+GaloisFieldPoly/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/GaloisFieldPoly.dir/build.make src/CMakeFiles/GaloisFieldPoly.dir/build
+.PHONY : GaloisFieldPoly/fast
 
 #=============================================================================
-# Target rules for targets named GaloisFieldTests
+# Target rules for targets named GaloisFieldPolyTests
 
 # Build rule for target.
-GaloisFieldTests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GaloisFieldTests
-.PHONY : GaloisFieldTests
+GaloisFieldPolyTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GaloisFieldPolyTests
+.PHONY : GaloisFieldPolyTests
 
 # fast build rule for target.
-GaloisFieldTests/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldTests.dir/build.make tests/CMakeFiles/GaloisFieldTests.dir/build
-.PHONY : GaloisFieldTests/fast
+GaloisFieldPolyTests/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldPolyTests.dir/build.make tests/CMakeFiles/GaloisFieldPolyTests.dir/build
+.PHONY : GaloisFieldPolyTests/fast
 
 #=============================================================================
-# Target rules for targets named measurments
+# Target rules for targets named PolynomialBasisMeasurments
 
 # Build rule for target.
-measurments: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 measurments
-.PHONY : measurments
+PolynomialBasisMeasurments: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 PolynomialBasisMeasurments
+.PHONY : PolynomialBasisMeasurments
 
 # fast build rule for target.
-measurments/fast:
-	$(MAKE) $(MAKESILENT) -f report/CMakeFiles/measurments.dir/build.make report/CMakeFiles/measurments.dir/build
-.PHONY : measurments/fast
+PolynomialBasisMeasurments/fast:
+	$(MAKE) $(MAKESILENT) -f report/CMakeFiles/PolynomialBasisMeasurments.dir/build.make report/CMakeFiles/PolynomialBasisMeasurments.dir/build
+.PHONY : PolynomialBasisMeasurments/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PolynomialBasis.dir/build.make CMakeFiles/PolynomialBasis.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -191,7 +191,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PolynomialBasis.dir/build.make CMakeFiles/PolynomialBasis.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -199,7 +199,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PolynomialBasis.dir/build.make CMakeFiles/PolynomialBasis.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -211,10 +211,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... GaloisField"
-	@echo "... GaloisFieldTests"
-	@echo "... main"
-	@echo "... measurments"
+	@echo "... GaloisFieldPoly"
+	@echo "... GaloisFieldPolyTests"
+	@echo "... PolynomialBasis"
+	@echo "... PolynomialBasisMeasurments"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

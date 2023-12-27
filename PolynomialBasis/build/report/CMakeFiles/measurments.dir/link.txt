@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/measurments.dir/measurments.cpp.o -o measurments  ../src/libGaloisField.a 

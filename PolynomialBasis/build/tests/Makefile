@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2
+CMAKE_SOURCE_DIR = /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build
+CMAKE_BINARY_DIR = /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -97,14 +97,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/tests//CMakeFiles/progress.marks
-	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles 0
+	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/tests//CMakeFiles/progress.marks
+	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
+	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -113,56 +113,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/GaloisFieldTests.dir/rule:
-	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/GaloisFieldTests.dir/rule
-.PHONY : tests/CMakeFiles/GaloisFieldTests.dir/rule
+tests/CMakeFiles/GaloisFieldPolyTests.dir/rule:
+	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/GaloisFieldPolyTests.dir/rule
+.PHONY : tests/CMakeFiles/GaloisFieldPolyTests.dir/rule
 
 # Convenience name for target.
-GaloisFieldTests: tests/CMakeFiles/GaloisFieldTests.dir/rule
-.PHONY : GaloisFieldTests
+GaloisFieldPolyTests: tests/CMakeFiles/GaloisFieldPolyTests.dir/rule
+.PHONY : GaloisFieldPolyTests
 
 # fast build rule for target.
-GaloisFieldTests/fast:
-	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldTests.dir/build.make tests/CMakeFiles/GaloisFieldTests.dir/build
-.PHONY : GaloisFieldTests/fast
+GaloisFieldPolyTests/fast:
+	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldPolyTests.dir/build.make tests/CMakeFiles/GaloisFieldPolyTests.dir/build
+.PHONY : GaloisFieldPolyTests/fast
 
-GaloisFieldTests.o: GaloisFieldTests.cpp.o
-.PHONY : GaloisFieldTests.o
+GaloisFieldPolyTests.o: GaloisFieldPolyTests.cpp.o
+.PHONY : GaloisFieldPolyTests.o
 
 # target to build an object file
-GaloisFieldTests.cpp.o:
-	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldTests.dir/build.make tests/CMakeFiles/GaloisFieldTests.dir/GaloisFieldTests.cpp.o
-.PHONY : GaloisFieldTests.cpp.o
+GaloisFieldPolyTests.cpp.o:
+	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldPolyTests.dir/build.make tests/CMakeFiles/GaloisFieldPolyTests.dir/GaloisFieldPolyTests.cpp.o
+.PHONY : GaloisFieldPolyTests.cpp.o
 
-GaloisFieldTests.i: GaloisFieldTests.cpp.i
-.PHONY : GaloisFieldTests.i
+GaloisFieldPolyTests.i: GaloisFieldPolyTests.cpp.i
+.PHONY : GaloisFieldPolyTests.i
 
 # target to preprocess a source file
-GaloisFieldTests.cpp.i:
-	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldTests.dir/build.make tests/CMakeFiles/GaloisFieldTests.dir/GaloisFieldTests.cpp.i
-.PHONY : GaloisFieldTests.cpp.i
+GaloisFieldPolyTests.cpp.i:
+	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldPolyTests.dir/build.make tests/CMakeFiles/GaloisFieldPolyTests.dir/GaloisFieldPolyTests.cpp.i
+.PHONY : GaloisFieldPolyTests.cpp.i
 
-GaloisFieldTests.s: GaloisFieldTests.cpp.s
-.PHONY : GaloisFieldTests.s
+GaloisFieldPolyTests.s: GaloisFieldPolyTests.cpp.s
+.PHONY : GaloisFieldPolyTests.s
 
 # target to generate assembly for a file
-GaloisFieldTests.cpp.s:
-	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldTests.dir/build.make tests/CMakeFiles/GaloisFieldTests.dir/GaloisFieldTests.cpp.s
-.PHONY : GaloisFieldTests.cpp.s
+GaloisFieldPolyTests.cpp.s:
+	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/GaloisFieldPolyTests.dir/build.make tests/CMakeFiles/GaloisFieldPolyTests.dir/GaloisFieldPolyTests.cpp.s
+.PHONY : GaloisFieldPolyTests.cpp.s
 
 # Help Target
 help:
@@ -173,10 +173,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... GaloisFieldTests"
-	@echo "... GaloisFieldTests.o"
-	@echo "... GaloisFieldTests.i"
-	@echo "... GaloisFieldTests.s"
+	@echo "... GaloisFieldPolyTests"
+	@echo "... GaloisFieldPolyTests.o"
+	@echo "... GaloisFieldPolyTests.i"
+	@echo "... GaloisFieldPolyTests.s"
 .PHONY : help
 
 
@@ -188,6 +188,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

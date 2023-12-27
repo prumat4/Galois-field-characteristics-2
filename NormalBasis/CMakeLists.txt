@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(GaloisFieldPoly)
+project(GaloisFieldNormal)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -10,10 +10,10 @@ add_subdirectory(tests)
 
 add_subdirectory(report)
 
-add_executable(PolynomialBasis
+add_executable(NormalBasis
     main.cpp
 )
 
-target_link_libraries(PolynomialBasis
-    GaloisFieldPoly
+target_link_libraries(NormalBasis
+    GaloisFieldNormal
 )

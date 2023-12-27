@@ -1,4 +1,4 @@
-# Install script for directory: /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/report
+# Install script for directory: /home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/PolynomialBasis/report
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
