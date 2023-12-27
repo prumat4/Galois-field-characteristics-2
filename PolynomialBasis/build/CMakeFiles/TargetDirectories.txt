@@ -1,0 +1,16 @@
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles/main.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles/test.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles/edit_cache.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/CMakeFiles/rebuild_cache.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/src/CMakeFiles/GaloisField.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/src/CMakeFiles/test.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/src/CMakeFiles/edit_cache.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/src/CMakeFiles/rebuild_cache.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/tests/CMakeFiles/GaloisFieldTests.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/tests/CMakeFiles/test.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/tests/CMakeFiles/edit_cache.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/tests/CMakeFiles/rebuild_cache.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/report/CMakeFiles/measurments.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/report/CMakeFiles/test.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/report/CMakeFiles/edit_cache.dir
+/home/logi/Desktop/uni/TERM5/CPOM/labs/Galois-field-characteristics-2/build/report/CMakeFiles/rebuild_cache.dir
