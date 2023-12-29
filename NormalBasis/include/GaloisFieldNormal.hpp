@@ -23,7 +23,7 @@ public:
     // GaloisFieldNormal inverse() const noexcept;
 
     bool operator==(const GaloisFieldNormal &other) const noexcept;
-    // uint8_t trace() const noexcept;
+    uint8_t trace() const noexcept;
 
     void setZero() noexcept;
     void setOne() noexcept;
@@ -32,13 +32,10 @@ public:
     void generateRandomBits(size_t size) noexcept;
 
 private:
-    // std::bitset<M> mod(const std::bitset<2*M - 1> other)  const noexcept;
     static int powOfTwoByMod(const int &) noexcept;
-    // RENAME !!!
     static bool condition(const int &i, const int &j) noexcept;
 
 private:
     std::bitset<M> bits;
-    // MUST be static and array
     static std::vector<std::bitset<M>> multMatrix;
 };

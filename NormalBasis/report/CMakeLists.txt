@@ -1,7 +1,7 @@
-# add_executable(PolynomialBasisMeasurments
-#     measurments.cpp
-# )
+add_executable(NormalBasisMeasurments
+    measurments.cpp
+)
 
-# target_link_libraries(PolynomialBasisMeasurments
-#     GaloisFieldPoly
-# )
+target_link_libraries(NormalBasisMeasurments
+    GaloisFieldNormal
+)

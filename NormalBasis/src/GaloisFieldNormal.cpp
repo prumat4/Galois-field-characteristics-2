@@ -89,28 +89,29 @@ GaloisFieldNormal GaloisFieldNormal::operator+(const GaloisFieldNormal &other) c
     return GaloisFieldNormal(bits ^ other.bits);
 }
 
+
+// try to optimize using bitwise operators instead of test, flip, etc...
 GaloisFieldNormal GaloisFieldNormal::operator*(const GaloisFieldNormal &other) const noexcept {
-    std::bitset<M> res;
+    std::bitset<M> res(0);
 
-    for(size_t i = 0; i < M; i++) {
-        std::bitset<M> a = (bits << i) | (bits >> (M - i)), 
-                       b = (other.bits << i) | (other.bits >> (M - i)),
-                       temp;
+    for (size_t i = 0; i < M; i++) {
+        std::bitset<M> a = (bits << i) | (bits >> (M - i));
+        std::bitset<M> b = (other.bits << i) | (other.bits >> (M - i));
+        std::bitset<M> temp(0);
 
-        for(size_t j = 0; j < M; j++) {
-            if(a.test(j)) {
-                for(size_t k = 0; k < M; k++) {
-                    if(GaloisFieldNormal::multMatrix.at(j).test(k)) 
+        for (size_t j = 0; j < M; j++) {
+            if (a.test(j)) {
+                for (size_t k = 0; k < M; k++) {
+                    if (multMatrix[j].test(k))
                         temp.flip(k);
                 }
             }
         }
-        
-        for(size_t j = 0; j < M; j++) {
-            if(b.test(j) && temp.test(j))
+
+        for (size_t j = 0; j < M; j++) {
+            if (b.test(j) && temp.test(j))
                 res.flip(M - i - 1);
         }
-        
     }
 
     return GaloisFieldNormal(res);
@@ -138,15 +139,15 @@ bool GaloisFieldNormal::operator==(const GaloisFieldNormal &other) const noexcep
     return bits == other.bits;
 }
 
-// uint8_t GaloisFieldNormal::trace() const noexcept {
-//     GaloisFieldNormal base = *this, trace;
-//     trace.setZero();
-//     for(size_t i = 0; i < M; i++) {
-//         trace = trace + base;
-//         base = base.toSquare();
-//     }
-//     return trace.bits.test(0);
-// }
+uint8_t GaloisFieldNormal::trace() const noexcept {
+    uint8_t res{ 0 };
+    for(size_t i = 0; i < M; i++) {
+        if(bits.test(i))
+            res++;
+    }
+
+    return res; 
+}
 
 // GaloisFieldNormal GaloisFieldNormal::inverse() const noexcept {
 //     GaloisFieldNormal inversed = *this, temp = *this;
