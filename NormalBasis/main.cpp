@@ -27,12 +27,12 @@ int main() {
     res = a.toSquare();
     res.printBits();
 
-    std::cout << "\nto power of: ";
-    auto AdditionStartTime = std::chrono::high_resolution_clock::now();
-    res = a.toPowerOf(b);
-    auto AdditionEndTime = std::chrono::high_resolution_clock::now();
-    std::cout << "time: " << std::chrono::duration_cast<std::chrono::milliseconds>(AdditionEndTime - AdditionStartTime).count() << " milliseconds" << std::endl;
-    res.printBits();
+    // std::cout << "\nto power of: ";
+    // auto AdditionStartTime = std::chrono::high_resolution_clock::now();
+    // res = a.toPowerOf(b);
+    // auto AdditionEndTime = std::chrono::high_resolution_clock::now();
+    // std::cout << "time: " << std::chrono::duration_cast<std::chrono::milliseconds>(AdditionEndTime - AdditionStartTime).count() << " milliseconds" << std::endl;
+    // res.printBits();
 
     // std::cout << "\ninverse: ";
     // res = a.inverse();
@@ -43,6 +43,9 @@ int main() {
     
     trace = b.trace();
     std::cout << "\nTrace b: " << trace << std:: endl;
+
+    if(a*a*a*a == (a.toSquare().toSquare()))
+        std::cout << "afsssssssssssss\n";
 
     return 0;
 }

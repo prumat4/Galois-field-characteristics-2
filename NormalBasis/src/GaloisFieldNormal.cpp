@@ -93,12 +93,11 @@ GaloisFieldNormal GaloisFieldNormal::operator+(const GaloisFieldNormal &other) c
 // try to optimize using bitwise operators instead of test, flip, etc...
 GaloisFieldNormal GaloisFieldNormal::operator*(const GaloisFieldNormal &other) const noexcept {
     std::bitset<M> res(0);
+    std::bitset<M> a = bits, b = other.bits;
 
     for (size_t i = 0; i < M; i++) {
-        std::bitset<M> a = (bits << i) | (bits >> (M - i));
-        std::bitset<M> b = (other.bits << i) | (other.bits >> (M - i));
         std::bitset<M> temp(0);
-
+        
         for (size_t j = 0; j < M; j++) {
             if (a.test(j)) {
                 for (size_t k = 0; k < M; k++) {
@@ -112,6 +111,9 @@ GaloisFieldNormal GaloisFieldNormal::operator*(const GaloisFieldNormal &other) c
             if (b.test(j) && temp.test(j))
                 res.flip(M - i - 1);
         }
+
+        a = (a << 1) | (a >> (M - 1));
+        b = (b << 1) | (b >> (M - 1));
     }
 
     return GaloisFieldNormal(res);
