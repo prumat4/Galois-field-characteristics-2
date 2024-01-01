@@ -10,6 +10,8 @@ int main() {
     double TotalToSquareTime = 0.0;
     double TotalPowerOfTime = 0.0;
 
+    GaloisFieldNormal::computeMultMatrix();
+
     for (int i = 0; i < numOfIterations; i++) { 
         GaloisFieldNormal gf1, gf2;
         gf1.generateRandomBits(M);
@@ -34,7 +36,6 @@ int main() {
         GaloisFieldNormal resultPowerOf = gf1.toPowerOf(gf2);
         auto PowerOfEndTime = std::chrono::high_resolution_clock::now();
         TotalPowerOfTime += std::chrono::duration_cast<std::chrono::milliseconds>(PowerOfEndTime - PowerOfStartTime).count();
-        
     }
 
     double AverageAdditionTime = TotalAdditionTime / numOfIterations;

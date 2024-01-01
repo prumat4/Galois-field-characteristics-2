@@ -19,7 +19,6 @@ public:
     
     GaloisFieldNormal toSquare() const noexcept;
     GaloisFieldNormal toPowerOf(const GaloisFieldNormal &power) const noexcept;
-    // bebe
     // GaloisFieldNormal inverse() const noexcept;
 
     bool operator==(const GaloisFieldNormal &other) const noexcept;
@@ -37,5 +36,5 @@ private:
 
 private:
     std::bitset<M> bits;
-    static std::vector<std::bitset<M>> multMatrix;
+    static std::vector<std::vector<uint8_t>> multMatrix;
 };

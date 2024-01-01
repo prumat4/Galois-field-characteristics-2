@@ -1,5 +1,7 @@
 #include "GaloisFieldNormal.hpp"
-std::vector<std::bitset<M>> GaloisFieldNormal::multMatrix(M, std::bitset<M>(0));
+constexpr uint16_t mod = 479;
+
+std::vector<std::vector<uint8_t>> GaloisFieldNormal::multMatrix(M, std::vector<uint8_t>(M, 0));
 
 GaloisFieldNormal::GaloisFieldNormal(const std::bitset<M> &other) noexcept {
     bits = other;
@@ -7,7 +9,7 @@ GaloisFieldNormal::GaloisFieldNormal(const std::bitset<M> &other) noexcept {
 
 GaloisFieldNormal::GaloisFieldNormal(const std::string &hexString) {
     std::string binaryString;
-    for (char c : hexString) {
+    for(char c : hexString) {
         int charValue;
         if (c >= '0' && c <= '9')
             charValue = c - '0';
@@ -20,11 +22,15 @@ GaloisFieldNormal::GaloisFieldNormal(const std::string &hexString) {
         for (int i = 3; i >= 0; --i)
             binaryString += (charValue & (1 << i)) ? '1' : '0';
     }
+    
     size_t nonZeroPos = binaryString.find_first_not_of('0');
+    
     if (nonZeroPos != std::string::npos)
         binaryString = binaryString.substr(nonZeroPos);
+    
     if(binaryString.size() > M)
         throw std::runtime_error("Input string is too long, terminating...");
+    
     if (binaryString.size() < M)
         binaryString = std::string(M - binaryString.size(), '0') + binaryString;
     bits = std::bitset<M>(binaryString);
@@ -35,16 +41,14 @@ void GaloisFieldNormal::printBits() const noexcept {
 }
 
 int GaloisFieldNormal::powOfTwoByMod(const int &num) noexcept {
-    int res{ 1 }, mod = 2 * M + 1;
+    int res{ 1 };
     for(size_t i = 0; i < num; i++) 
         res = (res << 1) % mod;
 
     return res;
 }
 
-//rename!
 bool GaloisFieldNormal::condition(const int &i, const int &j) noexcept {
-    int mod = 2 * M + 1;
     return ( 2 *mod - i - j) % mod == 1 
         || (mod - i + j) % mod == 1 
         || (i - j + mod) % mod == 1  
@@ -63,23 +67,6 @@ void GaloisFieldNormal::computeMultMatrix() {
     }
 }
 
-// std::bitset<M> GaloisFieldNormal::mod(std::bitset<2*M - 1> other) const noexcept {
-//     std::bitset<2*M - 1> gen, temp = other;
-//     gen.set(239, true);
-//     gen.set(15, true);
-//     gen.set(2, true);
-//     gen.set(1, true);
-//     gen.set(0, true);
-//     for(size_t i = 2*M - 2; i >= M; i--) {
-//         if(temp.test(i))
-//             temp ^= gen << (i - M);
-//     }
-//     std::bitset<M> res;
-//     for(size_t i = 0; i < M; i++)
-//         res.set(i, temp.test(i));
-//     return res;
-// }
-
 GaloisFieldNormal& GaloisFieldNormal::operator=(const GaloisFieldNormal &other) noexcept {
     bits = other.bits;
     return *this;
@@ -89,31 +76,40 @@ GaloisFieldNormal GaloisFieldNormal::operator+(const GaloisFieldNormal &other) c
     return GaloisFieldNormal(bits ^ other.bits);
 }
 
-
-// try to optimize using bitwise operators instead of test, flip, etc...
 GaloisFieldNormal GaloisFieldNormal::operator*(const GaloisFieldNormal &other) const noexcept {
     std::bitset<M> res(0);
     std::bitset<M> a = bits, b = other.bits;
 
-    for (size_t i = 0; i < M; i++) {
+    for(size_t i = 0; i < M; i++) {
         std::bitset<M> temp(0);
         
-        for (size_t j = 0; j < M; j++) {
+        for(size_t j = 0; j < M; j++) {
             if (a.test(j)) {
-                for (size_t k = 0; k < M; k++) {
-                    if (multMatrix[j].test(k))
+                for(size_t k = 0; k < M; k++) {
+                    if (multMatrix[j][k])
                         temp.flip(k);
                 }
             }
         }
 
-        for (size_t j = 0; j < M; j++) {
+        int count{0};
+        for(size_t j = 0; j < M; j++) {
             if (b.test(j) && temp.test(j))
-                res.flip(M - i - 1);
+                count++;
         }
 
-        a = (a << 1) | (a >> (M - 1));
-        b = (b << 1) | (b >> (M - 1));
+        if(count % 2 == 1)
+            res.flip(M - i - 1);
+
+        bool firstBit = a[M - 1];
+        a <<= 1;
+        if(firstBit)
+            a[0] = true;
+
+        firstBit = b[M - 1];
+        b <<= 1;
+        if(firstBit)
+            b[0] = true;
     }
 
     return GaloisFieldNormal(res);
@@ -134,6 +130,7 @@ GaloisFieldNormal GaloisFieldNormal::toPowerOf(const GaloisFieldNormal &power) c
             res = res * base;
         base = base.toSquare();
     }
+
     return res;
 }
 
@@ -171,6 +168,7 @@ void GaloisFieldNormal::setOne() noexcept {
 void GaloisFieldNormal::generateRandomBits(size_t size) noexcept {
     if(size > M)
         size = M;
+        
     float probability = 0.5;
     std::random_device rd;
     std::mt19937 gen(rd());
