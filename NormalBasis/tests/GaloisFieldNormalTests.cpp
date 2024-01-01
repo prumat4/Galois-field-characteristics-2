@@ -80,15 +80,15 @@ BOOST_AUTO_TEST_CASE(TraceTest) {
     BOOST_CHECK(trace == 117);
 }
 
-// BOOST_AUTO_TEST_CASE(InverseTest) {
-//     GaloisFieldNormal inversed = a.inverse();
-//     GaloisFieldNormal expected("204BDB3F7F6AFBC1D432C39C34CB28B3967369E91DF764019B5CB3B89880");
-//     BOOST_CHECK(inversed == expected);
+BOOST_AUTO_TEST_CASE(InverseTest) {
+    GaloisFieldNormal inversed = a.inverse();
+    GaloisFieldNormal expected("204bdb3f7f6afbc1d432c39c34cb28b3967369e91df764019b5cb3b89880");
+    BOOST_CHECK(inversed == expected);
 
-//     inversed = b.inverse();
-//     expected = GaloisFieldNormal("3d4b7cbaf4dec964719450d456eb5c6074b00df53fa4e11d19b248328389"); incorrect
-//     BOOST_CHECK(inversed == expected);
-// }
+    inversed = b.inverse();
+    expected = GaloisFieldNormal("24c4831dc75e12a14d3cbc9332ec8a71eb5d697f79091b2bd98f309fd677"); 
+    BOOST_CHECK(inversed == expected);
+}
 
 BOOST_AUTO_TEST_SUITE_END()
 
@@ -99,11 +99,5 @@ BOOST_AUTO_TEST_CASE(DistributivityTest) {
     GaloisFieldNormal c("09d7f58ff5398570a5ba840d9f0fc5c806f5353788a4c0b8488e4e62d2a");
     BOOST_CHECK(c*(a+b) == c*a + c*b);
 }
-
-// BOOST_AUTO_TEST_CASE(NeutralTest) {
-//     GaloisFieldNormal c("7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"), one;
-//     one.setOne();
-//     BOOST_CHECK(a.toPowerOf(c) == one);
-// }
 
 BOOST_AUTO_TEST_SUITE_END()

@@ -25,22 +25,16 @@ int main() {
     res = a.toSquare();
     res.printBits();
 
-    std::cout << "\nto power of: ";
-    auto AdditionStartTime = std::chrono::high_resolution_clock::now();
+    std::cout << "\ntoPowerOf: ";
     res = a.toPowerOf(b);
-    auto AdditionEndTime = std::chrono::high_resolution_clock::now();
-    std::cout << "time: " << std::chrono::duration_cast<std::chrono::milliseconds>(AdditionEndTime - AdditionStartTime).count() << " milliseconds" << std::endl;
     res.printBits();
 
-    // std::cout << "\ninverse: ";
-    // res = a.inverse();
-    // res.printBits();
+    std::cout << "\ninverse: ";
+    res = a.inverse();
+    res.printBits();
 
     int trace = a.trace();
     std::cout << "\nTrace a: " << trace << std:: endl;
-    
-    trace = b.trace();
-    std::cout << "\nTrace b: " << trace << std:: endl;
-    
+
     return 0;
 }

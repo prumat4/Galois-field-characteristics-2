@@ -148,14 +148,28 @@ uint8_t GaloisFieldNormal::trace() const noexcept {
     return res; 
 }
 
-// GaloisFieldNormal GaloisFieldNormal::inverse() const noexcept {
-//     GaloisFieldNormal inversed = *this, temp = *this;
-//     for(size_t i = 0; i < M - 2; i++) {
-//         temp = temp.toSquare();
-//         inversed = inversed * temp;
-//     }
-//     return inversed.toSquare();
-// }
+GaloisFieldNormal GaloisFieldNormal::inverse() const noexcept {
+    GaloisFieldNormal b(bits);
+    GaloisFieldNormal temp;
+    int k = 1;
+
+    for (int i = 6; i >= 0; i--) {
+        temp = b;
+
+        for(int j = 0; j < k; j++)
+            b = b.toSquare();
+        
+        b = b * temp;
+        k <<= 1;
+
+        if(((M - 1) >> i) & 1) {
+            b = b.toSquare() * bits;
+            k++;
+        }
+    }
+
+    return b.toSquare();
+}
 
 void GaloisFieldNormal::setZero() noexcept {
     bits = std::bitset<M>();
@@ -168,7 +182,7 @@ void GaloisFieldNormal::setOne() noexcept {
 void GaloisFieldNormal::generateRandomBits(size_t size) noexcept {
     if(size > M)
         size = M;
-        
+
     float probability = 0.5;
     std::random_device rd;
     std::mt19937 gen(rd());

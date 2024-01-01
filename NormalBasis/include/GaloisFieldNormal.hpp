@@ -19,7 +19,7 @@ public:
     
     GaloisFieldNormal toSquare() const noexcept;
     GaloisFieldNormal toPowerOf(const GaloisFieldNormal &power) const noexcept;
-    // GaloisFieldNormal inverse() const noexcept;
+    GaloisFieldNormal inverse() const noexcept;
 
     bool operator==(const GaloisFieldNormal &other) const noexcept;
     uint8_t trace() const noexcept;
