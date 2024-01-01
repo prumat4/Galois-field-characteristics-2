@@ -19,20 +19,14 @@
 \centering
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-\textbf{Розмір} & \textbf{Додавання (ns)} & \textbf{Множення (ns)} & \textbf{Піднесення до степеня (ms)} & \textbf{Обернення (ms)} \\
+\textbf{addition (ns)} & \textbf{multiplication (ns)} & \textbf{to power (ms)} & \textbf{inverse (ms)} & \textbf{to square (ns)}\\
 \hline
-16 & 128.57 & 45312.8 & 178.07 & 352.46 \\
-32 & 126.45 & 79633.6 & 191.5 & 357.66 \\
-64 & 116.43 & 155148 & 196.44 & 349.45 \\
-128 & 123.15 & 333578 & 226.35 & 356.46 \\
-239 & 148.22 & 792021 & 285.47 & 379.63 \\
+358.64 & 36.04 & 4436.34 & 443.31 & 433.93\\
 \hline
 \end{tabular}
 \caption{Середній час виконання операцій}
 \label{tab:comparison}
 \end{table}
-
-\quad \textcolor{red}{\textbf{!!!}} В таблиці фігурує змінна \textit{'розмір'}, для неї я генерував випадкові бітові послідновності, тобто, якщо розмір 16, то це означає, що потенційно лише перші 16 бітів послідовності можуть бути 1, а всі інші 0.
 
 \section{Тестування класу GaloisField}
 
@@ -68,16 +62,7 @@
                     \item $a$: 4fc1c8f723d908a8459557b73b1d9335db15946ae1cd3c638b407ea812c
                     \item $b$: 6c6e49eca4f2b4b5684cc678e5b1449500a6ae03b4e732eaacdec175ccd
                 \end{itemize}
-            \item результат: 28f0923c10c934e09527bfa23cd7e2b853b3b2f3e0b3ec7aea2152073287
-        \end{itemize}
-    \item Neutral Element Test:
-        \begin{itemize}
-            \item вхід: 
-                \begin{itemize}
-                    \item $a$: 4fc1c8f723d908a8459557b73b1d9335db15946ae1cd3c638b407ea812c
-                    \item $one$: 0000000000000000000000000000000000000000000000000000000000001
-                \end{itemize}
-            \item результат: 4fc1c8f723d908a8459557b73b1d9335db15946ae1cd3c638b407ea812c
+            \item результат: f1032ceec873b9ad89ad868839c48d2b1453ab9791233f597161cec4abc
         \end{itemize}
     \item To Square Test:
         \begin{itemize}
@@ -85,7 +70,7 @@
                 \begin{itemize}
                     \item $a$: 4fc1c8f723d908a8459557b73b1d9335db15946ae1cd3c638b407ea812c
                 \end{itemize}
-            \item результат: 50b6456108378713c37d3039cf1792aec1b5f9dfbebbc0a6c770a75d693e
+            \item результат: 27e0e47b91ec845422caabdb9d8ec99aed8aca3570e69e31c5a03f54096
         \end{itemize}
     \item To Power Of Test:
         \begin{itemize}
@@ -94,7 +79,7 @@
                     \item $a$: 4fc1c8f723d908a8459557b73b1d9335db15946ae1cd3c638b407ea812c
                     \item $b$: 6c6e49eca4f2b4b5684cc678e5b1449500a6ae03b4e732eaacdec175ccd
                 \end{itemize}
-            \item результат: 17c762a0c47b27abcd6d274ad5b5c738ff5ac768d320f24514b1f483ddaa
+            \item результат: 7fe807e61c75fb7aa1e9fc4b09c1a549d500440ac7e572cfccb1b0be36a4
         \end{itemize}
 \end{itemize}
 \subsection{Utilities Tests}
@@ -106,7 +91,7 @@
                     \item $a$: 4fc1c8f723d908a8459557b73b1d9335db15946ae1cd3c638b407ea812c
                     \item $b$: 6c6e49eca4f2b4b5684cc678e5b1449500a6ae03b4e732eaacdec175ccd
                 \end{itemize}
-            \item  результат: для 'a' = 0, для 'b' = 1
+            \item  результат: для 'a' = 116, для 'b' = 117
         \end{itemize}
     \item Inverse Test:
         \begin{itemize}
@@ -115,8 +100,8 @@
                     \item $a$: 4fc1c8f723d908a8459557b73b1d9335db15946ae1cd3c638b407ea812c
                     \item $b$: 6c6e49eca4f2b4b5684cc678e5b1449500a6ae03b4e732eaacdec175ccd
                 \end{itemize}
-            \item результат для 'a': 5832c6cdadb2067298e6c340ce3eadf6810ed043badeb297a8219eebc277
-            \item результат для 'b': 3d4b7cbaf4dec964719450d456eb5c6074b00df53fa4e11d19b248328389
+            \item результат для 'a': 204bdb3f7f6afbc1d432c39c34cb28b3967369e91df764019b5cb3b89880
+            \item результат для 'b': 24c4831dc75e12a14d3cbc9332ec8a71eb5d697f79091b2bd98f309fd677
         \end{itemize}
 \end{itemize}
 
